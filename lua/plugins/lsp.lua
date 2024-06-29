@@ -1,6 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
-  event = {"BufReadPost", "BufNewFile",},
+  cmd="LspStart",
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
   },
@@ -14,6 +14,7 @@ return {
       "pyright",
       "rust_analyzer",
       "gopls",
+      "tsserver",
     }
 
     local capabilities = require('cmp_nvim_lsp').default_capabilities()

@@ -37,6 +37,9 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 keymap("n", "<A-j>", ":m .+1<CR>==", opts)
 
+-- Indent the whole file
+keymap("n","<leader>i","GVgg=0<C-o><C-o>")
+
 -- Neotree
 keymap("n","<leader>e","<cmd>Neotree float<cr>")
 keymap("n","<leader>E","<cmd>Neotree filesystem reveal left<cr>")
@@ -55,9 +58,9 @@ keymap("n","<leader>tt","<cmd>TodoTelescope<cr>")
 -- Lazy
 keymap("n","<leader>lz","<cmd>Lazy<cr>")
 
--- Toggle term
-keymap("n","<leader>th","<cmd>ToggleTerm dir=pwd direction=horizontal<cr>")
-keymap("n","<leader>tf","<cmd>ToggleTerm dir=pwd direction=float<cr>")
+-- Lsp
+keymap("n","<leader>li","<cmd>LspInfo<cr>")
+keymap("n","<leader>ls","<cmd>LspStart<cr>")
 
 -- Gitsigns
 keymap("n","[h","<cmd>Gitsigns prev_hunk<cr>")
