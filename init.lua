@@ -1,8 +1,6 @@
--- vim.loader.enable() 
+vim.loader.enable() 
 vim.g.loaded_python3_provider=0
 require("core")
-
-vim.cmd("colorscheme habamax")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -17,31 +15,38 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("plugins",{
-  defaults = { lazy = true },
-  ui = {
-    border = "rounded",
-    title = "Lazy",
-  },
-  rocks = {
-    hererocks = false,
-    enabled = false,
-  },
-  performance = {
-    cache = {
-      enabled = true,
+require("lazy").setup(
+{
+  {import = "plugins"},
+  {import = "extra"},
+},
+{
+    defaults = { lazy = true },
+    ui = {
+      border = "rounded",
+      title = "Lazy",
     },
-    rtp = {
-      disabled_plugins = {
-        "matchit",
-        "matchparen",
-        "netrwPlugin",
-        "gzip",
-        "tarPlugin",
-        "tohtml",
-        -- "tutor",
-        "zipPlugin",
+    rocks = {
+      hererocks = false,
+      enabled = false,
+    },
+    performance = {
+      cache = {
+        enabled = true,
       },
-    },
-  }
-})
+      rtp = {
+        disabled_plugins = {
+          "matchit",
+          "matchparen",
+          "netrwPlugin",
+          "gzip",
+          "tarPlugin",
+          "tohtml",
+          -- "tutor",
+          "zipPlugin",
+        },
+      },
+    }
+  })
+
+vim.cmd("colorscheme tokyonight")

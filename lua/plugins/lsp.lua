@@ -1,6 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
-  cmd="LspStart",
+  event = "UIEnter",
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
   },
@@ -10,19 +10,29 @@ return {
     local cmp = require("cmp_nvim_lsp")
 
     local servers = {
+      "lua_ls",
       "clangd",
       "pyright",
       "rust_analyzer",
       "gopls",
+      "html",
+      "cssls",
       "tsserver",
     }
 
-    local capabilities = require('cmp_nvim_lsp').default_capabilities()
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities.textDocument.completion.completionItem.snippetSupport = true
+    local complete_capabilities = cmp.default_capabilities(capabilities)
 
     for _,server in pairs(servers) do
+      local status,settings = pcall(require,"plugins.lsp-settings." .. server)
+        if not status then
+          settings = {}
+        end
 
       lsp[server].setup({
-        capabilities = capabilities,
+        capabilities = complete_capabilities,
+        settings = settings
       })
 
     end

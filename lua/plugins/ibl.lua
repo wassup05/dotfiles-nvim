@@ -1,9 +1,12 @@
-return { 
-  "lukas-reineke/indent-blankline.nvim", 
+return {
+  "lukas-reineke/indent-blankline.nvim",
   main = "ibl",
-  event = "InsertEnter",
+  event = "VimEnter",
   opts = {
-    scope = { enabled = false },
-   indent = { char = "┊" },
-  }, 
+    scope = { show_start = false, show_end = false },
+    indent = {
+      char = "│",
+      tab_char = "│",
+    },
+  },
 }
