@@ -1,7 +1,7 @@
 return {
   'nvim-lualine/lualine.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
-  event = "VeryLazy",
+  lazy = false,
   config = function()
     require("lualine").setup {
       options = {
@@ -18,20 +18,31 @@ return {
             readonly = "",
             unnamed = "---",
             newfile = "󰎔",
-          } }
+          },
+            separator = " | "
+          }, {
+          function()
+            local str = ""
+            local servers = vim.lsp.get_clients()
+            for _, server in pairs(servers) do
+              str = str .. "   " .. server.name
+            end
+            return str
+          end,
+        }
         },
         lualine_x = {
           {
             "diff",
             symbols = {
               added = " ",
-              modified = "",
-              removed = "",
+              modified = " ",
+              removed = " ",
             }
           },
         },
         lualine_y = {
-          { "progress", separator = " |",                  padding = { left = 1, right = 0 } },
+          { "progress", separator = " |",                 padding = { left = 1, right = 0 } },
           { "location", padding = { left = 0, right = 1 } },
         },
         lualine_z = {

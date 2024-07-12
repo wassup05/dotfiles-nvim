@@ -36,6 +36,10 @@ keymap("n", "<S-h>", ":bprevious<CR>")
 -- Indent the whole file
 keymap("n","<leader>i","GVgg=0")
 
+-- For jumping half page up or down in a neat way
+keymap("n","<C-d>","<C-d>zz")
+keymap("n","<C-u>","<C-u>zz")
+
 -- Nvim Tree
 keymap("n","<leader>e","<cmd>NvimTreeToggle<cr>")
 
@@ -55,7 +59,6 @@ keymap("n","<leader>lz","<cmd>Lazy<cr>")
 
 -- Lsp
 keymap("n","<leader>li","<cmd>LspInfo<cr>")
-keymap("n","<leader>ls","<cmd>LspStart<cr>")
 
 -- Gitsigns
 keymap("n","[h","<cmd>Gitsigns prev_hunk<cr>")
@@ -64,6 +67,10 @@ keymap("n","<leader>gl","<cmd>Gitsigns toggle_current_line_blame<cr>")
 
 -- Color Picker
 keymap("n","<leader>c","<cmd>Colortils picker<cr>")
+
+
+-- Theme picker
+keymap("n","<leader>th", function() require("custom.theme-picker").pickTheme() end)
 
 -- Insert
 

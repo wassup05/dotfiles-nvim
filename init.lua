@@ -1,5 +1,5 @@
-vim.loader.enable() 
-vim.g.loaded_python3_provider=0
+vim.loader.enable()
+vim.g.loaded_python3_provider = 0
 require("core")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -15,13 +15,18 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+require("custom")
+
 require("lazy").setup(
-{
-  {import = "plugins"},
-  {import = "extra"},
-},
-{
+  {
+    { import = "plugins" },
+    { import = "extra" },
+  },
+  {
     defaults = { lazy = true },
+    install = {
+      colorscheme = { "tokyonight" }
+    },
     ui = {
       border = "rounded",
       title = "Lazy",
@@ -38,15 +43,39 @@ require("lazy").setup(
         disabled_plugins = {
           "matchit",
           "matchparen",
-          "netrwPlugin",
-          "gzip",
-          "tarPlugin",
+          "2html_plugin",
           "tohtml",
-          -- "tutor",
+          "getscript",
+          "getscriptPlugin",
+          "gzip",
+          "logipat",
+          "netrw",
+          "netrwPlugin",
+          "netrwSettings",
+          "netrwFileHandlers",
+          "tar",
+          "tarPlugin",
+          "rrhelper",
+          "spellfile_plugin",
+          "vimball",
+          "vimballPlugin",
+          "zip",
           "zipPlugin",
+          -- "tutor",
+          "rplugin",
+          "syntax",
+          "synmenu",
+          "optwin",
+          "compiler",
+          "bugreport",
+          "ftplugin",
         },
       },
+      dev = {
+        path = "~/dev/projects/neovim",
+        pattern = {
+          "neovim"
+        }
+      }
     }
   })
-
-vim.cmd("colorscheme tokyonight")

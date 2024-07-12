@@ -1,6 +1,6 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  event = "VimEnter",
+  event = "LazyFile",
   config = function()
     require('nvim-treesitter.configs').setup{
       ensure_installed = {"c", "lua", "vim", "vimdoc", "query","python","rust","go", "regex"},
