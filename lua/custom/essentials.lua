@@ -1,21 +1,11 @@
 function P(t)
-  print(vim.inspect(t))
-  return t
+	print(vim.inspect(t))
+	return t
 end
 
-local function unload()
-  vim.ui.input({
-    prompt = "Enter the package to be unloaded:"
-  }, function(choice)
-    if choice ~= nil or choice ~= "" then
-      package.loaded[tostring(choice)] = nil
-    end
-  end)
-end
-
-vim.keymap.set("n", "<leader>x", "<cmd>w<cr><cmd>source %<cr>")
-vim.keymap.set("n", "<leader>tx", "<cmd>w<cr><cmd>PlenaryBustedFile %<cr>")
-vim.keymap.set("n", "<leader>hh", "<cmd>Telescope help_tags<cr>")
-vim.keymap.set("n", "<leader>ul", function() unload() end)
-
-return 7
+vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Telescope neovim help tags" })
+vim.keymap.set("n", "<leader>x", ":source %<cr>", { desc = "Execute (source) the current file" })
+vim.keymap.set("n", "<leader><leader>t", function()
+	vim.cmd("Lazy load plenary.nvim")
+	vim.cmd("PlenaryBustedFile %")
+end, { desc = "Test the current file" })
