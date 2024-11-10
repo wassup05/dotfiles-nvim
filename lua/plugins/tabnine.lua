@@ -1,4 +1,5 @@
 return {
+	enabled = false,
 	"codota/tabnine-nvim",
 	event = "LazyFile",
 	build = "./dl_binaries.sh",

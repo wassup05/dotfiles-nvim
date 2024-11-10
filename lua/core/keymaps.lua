@@ -21,10 +21,13 @@ keymap("t", "<C-j>", [[<C-\><C-n><C-W>j]])
 keymap("t", "<C-k>", [[<C-\><C-n><C-W>k]])
 keymap("t", "<C-l>", [[<C-\><C-n><C-W>l]])
 
+keymap("n", "<leader>la", ":Lazy load all<CR>", { desc = "Load all the plugins" })
+
 -- Themes
 keymap("n", "<leader>th", function()
 	vim.cmd("TransparentDisable")
 	vim.cmd("Telescope colorscheme")
+	vim.cmd("Lazy load all")
 end, { desc = "Telescope theme switcher" })
 
 -- Normal
@@ -50,10 +53,10 @@ keymap("n", "<leader>sv", ":vsp<CR>", { desc = "Split vertically" })
 keymap("n", "<leader>sx", ":close<CR>", { desc = "Close the split" })
 
 -- Tabs
--- keymap("n", "<leader>to", ":tabnew<CR>", { desc = "New Tab" })
--- keymap("n", "<leader>tx", ":tabclose<CR>", { desc = "Close Tab" })
--- keymap("n", "<leader>tp", ":tabp<CR>", { desc = "Previous Tab" })
--- keymap("n", "<leader>tn", ":tabn<CR>", { desc = "Next Tab" })
+keymap("n", "<leader>to", ":tabnew<CR>", { desc = "New Tab" })
+keymap("n", "<leader>tx", ":tabclose<CR>", { desc = "Close Tab" })
+keymap("n", "<leader>tp", ":tabp<CR>", { desc = "Previous Tab" })
+keymap("n", "<leader>tn", ":tabn<CR>", { desc = "Next Tab" })
 
 -- Navigate buffers
 keymap("n", "<Tab>", ":bnext<CR>", { desc = "Next Buffer" })

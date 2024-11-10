@@ -22,7 +22,7 @@ return {
 			"cssls",
 			"ts_ls",
 			"ruby_lsp",
-			"hls",
+			-- "fortls",
 		}
 
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
