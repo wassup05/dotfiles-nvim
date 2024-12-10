@@ -14,12 +14,11 @@ return {
 				"python",
 				"rust",
 				"go",
-				"regex",
 				"html",
 				"css",
 				"markdown",
 			},
-			auto_install = true,
+			auto_install = false,
 			highlight = {
 				enable = true,
 			},
@@ -37,6 +36,15 @@ return {
 				requires_generate_from_grammar = true,
 			},
 			filetype = "ejs",
+		}
+
+		parser_config.fasm = {
+			install_info = {
+				url = "~/programming/projects/tree-sitter-fasm/",
+				files = { "src/parser.c" },
+				requires_generate_from_grammar = true,
+			},
+			filetype = "fasm",
 		}
 	end,
 }

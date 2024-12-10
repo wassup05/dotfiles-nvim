@@ -1,6 +1,5 @@
 return {
 	"catppuccin/nvim",
-	name = 'catppuccin',
-	cmd = "LoadAllThemes",
-	opts = {}
+	name = "catppuccin",
+	opts = {},
 }

@@ -44,7 +44,7 @@ autocmd("LspAttach", {
 		vim.keymap.set("n", "<leader>ca", function()
 			vim.lsp.buf.code_action()
 		end, { buffer = event.buf, desc = "LSP open code actions" })
-		vim.keymap.set("n", "<leader>cf", function()
+		vim.keymap.set("n", "<leader>lf", function()
 			vim.lsp.buf.format()
 		end, { buffer = event.buf, desc = "LSP format the codebase" })
 		vim.keymap.set("n", "<leader>gr", function()

@@ -1,5 +1,5 @@
 return {
-	enabled = false,
+	enabled = true,
 	"echasnovski/mini.animate",
 	event = "CursorMoved",
 	version = false,

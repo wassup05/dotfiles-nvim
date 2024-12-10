@@ -1,6 +1,5 @@
 return {
 	"Shatur/neovim-ayu",
-	cmd = "LoadAllThemes",
 	config = function()
 		require("ayu").setup({
 			overrides = {

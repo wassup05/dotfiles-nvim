@@ -1,7 +1,10 @@
 return {
+	enabled = true,
 	"stevearc/conform.nvim",
-	event = { "BufWritePre" },
 	cmd = { "ConformInfo" },
+	keys = {
+		{ "<leader>cf", ":lua require('conform').format()<CR>", { desc = "Formats the file using Conform" } },
+	},
 	opts = {
 		formatters_by_ft = {
 			lua = { "stylua" },

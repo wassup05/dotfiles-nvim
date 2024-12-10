@@ -1,7 +1,7 @@
 return {
-	'akinsho/bufferline.nvim',
+	"akinsho/bufferline.nvim",
 	version = "*",
-	dependencies = 'nvim-tree/nvim-web-devicons',
+	dependencies = "nvim-tree/nvim-web-devicons",
 	event = "BufAdd",
 	opts = {
 		options = {
@@ -11,7 +11,7 @@ return {
 			show_close_icon = true,
 			show_tab_indicators = true,
 			separator_style = "thin",
-			always_show_bufferline = false
-		}
-	}
+			always_show_bufferline = false,
+		},
+	},
 }

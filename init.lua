@@ -1,4 +1,4 @@
-local colorscheme = "ayu-mirage"
+local colorscheme = "catppuccin"
 
 vim.loader.enable()
 vim.g.loaded_python3_provider = 0
@@ -35,7 +35,7 @@ require("lazy").setup({
 		title = "Lazy",
 	},
 	dev = {
-		path = "~/develop/projects/neovim",
+		path = "~/programming/projects/neovim",
 		fallback = false,
 	},
 	rocks = {

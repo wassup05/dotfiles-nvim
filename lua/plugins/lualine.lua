@@ -1,47 +1,51 @@
 return {
-	'nvim-lualine/lualine.nvim',
-	dependencies = { 'nvim-tree/nvim-web-devicons' },
+	"nvim-lualine/lualine.nvim",
+	dependencies = { "nvim-tree/nvim-web-devicons" },
 	lazy = false,
 	config = function()
-		require("lualine").setup {
+		require("lualine").setup({
 			options = {
 				globalstatus = true,
-				theme = 'auto',
-				section_separators = { left = '', right = '' },
+				theme = "auto",
+				section_separators = { left = "", right = "" },
 			},
 			sections = {
 				lualine_a = {
-					{ 'mode',
+					{
+						"mode",
 						icons_enabled = true,
 						icon = {
 							"",
-							align = "left"
+							align = "left",
 						},
-						separator = { left = "", right = " " }
-					}
+						separator = { left = "", right = " " },
+					},
 				},
 				lualine_b = {
 					{ "filetype", icon_only = true, separator = "", padding = { left = 0, right = 0 } },
-					{ "filename", symbols = {
-						modified = "",
-						readonly = "󰌾",
-						unnamed = " No Name",
-						newfile = " Empty",
-					},
+					{
+						"filename",
+						symbols = {
+							modified = "",
+							readonly = "󰌾",
+							unnamed = " No Name",
+							newfile = " Empty",
+						},
 						separator = {
-							left = "", right = ""
-						}
-					}
+							left = "",
+							right = "",
+						},
+					},
 				},
 				lualine_c = {
-					{ 'branch', icon = { '󰘬', align = 'left' }, separator = { left = "", right = "" } },
+					{ "branch", icon = { "󰘬", align = "left" }, separator = { left = "", right = "" } },
 					{
 						"diff",
 						symbols = {
 							added = " ",
 							modified = " ",
 							removed = " ",
-						}
+						},
 					},
 				},
 				lualine_x = {
@@ -53,13 +57,13 @@ return {
 						end
 
 						return ""
-					end
+					end,
 				},
 				lualine_y = {
 					{
 						function()
 							local name = vim.loop.cwd()
-							name = (name:match "([^/\\]+)[/\\]*$" or name) .. " "
+							name = (name:match("([^/\\]+)[/\\]*$") or name) .. " "
 
 							return name
 						end,
@@ -69,7 +73,7 @@ return {
 							align = "left",
 						},
 						separator = { left = "", right = "" },
-						padding = 0
+						padding = 0,
 					},
 				},
 				lualine_z = {
@@ -78,12 +82,12 @@ return {
 						icons_enabled = true,
 						icon = {
 							"󰛾",
-							align = "left"
+							align = "left",
 						},
 						separator = { left = "" },
-					}
-				}
+					},
+				},
 			},
-		}
+		})
 	end,
 }

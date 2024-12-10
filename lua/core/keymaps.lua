@@ -35,6 +35,14 @@ keymap("n", "<leader>nh", ":nohl<CR>", { desc = "Remove search highlights" })
 
 vim.api.nvim_create_user_command("ConfigOpen", "e ~/.config/nvim/init.lua", {})
 
+-- Quickfix list
+keymap("n", "[q", ":cp<CR>", { desc = "Previous Quickfix entry" })
+keymap("n", "]q", ":cn<CR>", { desc = "Next Quickfix entry" })
+
+-- Loclist
+keymap("n", "[l", ":lprev<CR>", { desc = "Previous Loclist entry" })
+keymap("n", "]l", ":lnext<CR>", { desc = "Next Loclist entry" })
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", { desc = "Switch window left" })
 keymap("n", "<C-j>", "<C-w>j", { desc = "Switch window down" })

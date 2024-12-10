@@ -12,7 +12,7 @@ return {
 		formatter_opts = {
 			formatter_args = {
 				"--indent",
-				"2",
+				"4",
 				"--case",
 				"1",
 				"1",

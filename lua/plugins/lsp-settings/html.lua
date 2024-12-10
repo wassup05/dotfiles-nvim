@@ -1,7 +1,7 @@
 return {
-  filetypes = {
-    "html",
-    "ejs",
-    "htmx",
-  }
+	filetypes = {
+		"html",
+		"ejs",
+		"htmx",
+	},
 }
